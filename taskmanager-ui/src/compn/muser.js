@@ -85,7 +85,7 @@ return(
       <th scope="row">{task.id}</th>
       <td>{task.email}</td>
       <td>{task.name}</td>
-      <td><button className="btn btn-warning" onClick={()=>navigate("/admintask", { state: { email: task.email } })}>View Task</button></td>
+      <td><button className="btn btn-warning" onClick={()=>navigate("/admintask", { state: { email: task.email } })}>View loan</button></td>
       <td><button className="btn btn-danger" onClick={()=>DeleteUser(task.id)}>Delete Profile</button></td>
     </tr>
      ))}

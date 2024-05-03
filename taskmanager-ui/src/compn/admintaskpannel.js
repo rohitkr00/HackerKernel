@@ -26,7 +26,7 @@ useEffect(()=> {
   const ShowTask =  () =>{
 
 
-    const baseURL5 = "http://127.0.0.1:8000/Authapp/fetch_task/";
+    const baseURL5 = "http://127.0.0.1:8000/Authapp/loan_filter/";
     axios.post(baseURL5,{email: id})
       .then((response) => {
         // console.log(response.data);
@@ -130,8 +130,10 @@ useEffect(()=> {
                    <div className="card shadow p-3  m-3 bg-white rounded" style={{width: '18rem'}}>
                    <div className="card-body">
                      <h5 className="card-title">Task :- {index + 1}</h5>
-                     <h6 className="card-subtitle mb-2 text-muted">{task.date}</h6>
-                     <p className="card-text">{task.task}</p>
+                     <h6 className="card-subtitle mb-2 text-muted">{task.time}</h6>
+                     <h6 className="card-subtitle mb-2 text-muted">Term:-{task.term}</h6>
+                     <h6 className="card-subtitle mb-2 text-muted">{task.status}</h6>
+                     <p className="card-text">{task.amount}</p>
                      {/* <button className="btn btn-danger text-right" onClick={()=>Deletetask(task.id)} >Delete Task</button>
      */}
                     

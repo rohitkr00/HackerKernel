@@ -16,7 +16,7 @@ export default function ManageTask(){
         const ShowUser =  () =>{
       
       
-          const baseURL6 = "http://127.0.0.1:8000/Authapp/task_view/";
+          const baseURL6 = "http://127.0.0.1:8000/Authapp/loan_view/";
           axios.get(baseURL6)
             .then((response) => {
               // console.log(response.data);
@@ -41,7 +41,7 @@ export default function ManageTask(){
 
 const Deletetask = (uid) =>{
 
-            axios.post("http://127.0.0.1:8000/Authapp/delete_task/",{id:uid})
+            axios.patch("http://127.0.0.1:8000/Authapp/loan_view/",{id:uid, status:"approved"})
             .then((response) => {
       
               console.log(response.data);
@@ -74,9 +74,10 @@ return(
                    <div className="card-body">
                      <h5 className="card-title">Task :- {index + 1}</h5>
                      <h5 className="card-title">{task.useremail}</h5>
-                     <h6 className="card-subtitle mb-2 text-muted">{task.taskstatus}</h6>
-                     <p className="card-text">{task.task}</p>
-                     <button className="btn btn-danger text-right" onClick={()=>Deletetask(task.id)} >Delete Task</button>
+                     <h6 className="card-subtitle mb-2 text-muted">{task.status}</h6>
+                     <h6 className="card-subtitle mb-2 text-muted">{task.time}</h6>
+                     <p className="card-text">{task.amount}</p>
+                     <button className="btn btn-danger text-right" onClick={()=>Deletetask(task.id)} >Approve Loan</button>
     
                     
                    </div>

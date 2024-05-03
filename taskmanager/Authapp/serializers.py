@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UserDetails, UserTask
+from .models import UserDetails, Loandetails
 
 class UserSerializer(serializers.ModelSerializer):
 
@@ -10,10 +10,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 
-class UserTaskSerializer(serializers.ModelSerializer):
+class LoanSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model=UserTask
+        model=Loandetails
         fields="__all__"
 
 

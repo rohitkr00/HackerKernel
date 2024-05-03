@@ -10,7 +10,9 @@ class UserDetails(models.Model):
         return self.name
     
 
-class UserTask(models.Model):
+class Loandetails(models.Model):
     useremail=models.EmailField(max_length=254)
-    taskstatus=models.CharField(max_length=254)
-    task=models.TextField()
+    time=models.DateField(auto_now=True)
+    status = models.CharField(max_length=254)
+    term=models.CharField(max_length=254)
+    amount=models.IntegerField()

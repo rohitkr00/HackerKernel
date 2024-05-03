@@ -14,7 +14,7 @@ export default function Task() {
   const navigate = useNavigate();
 
     const [user, setUser] = useState({
-        useremail:"",taskstatus:"",task:""
+        useremail:"",status:"pending",term:"",amount:""
       })
 
    
@@ -39,7 +39,7 @@ export default function Task() {
 
     
 
-      const baseURL = "http://127.0.0.1:8000/Authapp/task_view/";
+      const baseURL = "http://127.0.0.1:8000/Authapp/loan_view/";
       const handleSubmit = (e) => {
           e.preventDefault();
           
@@ -74,14 +74,14 @@ export default function Task() {
 <form method="post">
   <label htmlFor="user-email">User-mail:</label><br />
   <input type="text" id="name" name="useremail" value={user.useremail} onChange={handleInputs} required /><br /><br />
-  <label htmlFor="status">StatusOfTask:</label><br />
-  <label htmlFor="status">Pending:</label><br />
-  <input type="radio" name="taskstatus" value="pending" checked={user.taskstatus==="pending"} onChange={handleInputs} required /><br /><br />
-  <label htmlFor="status">Completed:</label><br />
-  <input type="radio" name="taskstatus" value="completed" checked={user.taskstatus==="completed"} onChange={handleInputs} required /><br /><br />
+
+  <label htmlFor="user-email">Term:</label><br />
+  <input type="text" id="name" name="term" value={user.term} onChange={handleInputs} required /><br /><br />
   
-  <label htmlFor="phone">Task:</label><br />
-  <input type="text" id="phone" name="task" value={user.task} onChange={handleInputs} required /><br /><br />
+  
+  <label htmlFor="user-email">Amount:</label><br />
+  <input type="text" id="name" name="amount" value={user.amount} onChange={handleInputs} required /><br /><br />
+  
   <input type="submit" onClick={handleSubmit} defaultValue="Submit" />
 </form>
 <Outlet />
